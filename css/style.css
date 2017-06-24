@@ -1,0 +1,16 @@
+html, body {
+    min-width: 320px;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.myTitle {
+    padding: 0 10%;
+    background-color: #000000;
+}
+
+.container-fluid.scrollable {
+    height: 100%; /*Sets the scrollable area to 100% of the viewport*/
+    overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
+    margin: 0;
+}
