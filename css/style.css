@@ -4,6 +4,9 @@ html, body {
     height: 100%;
 }
 
+div {
+    padding: 0;
+}
 .myTitle {
     padding: 0 10%;
     background-color: #000000;
@@ -13,4 +16,89 @@ html, body {
     height: 100%; /*Sets the scrollable area to 100% of the viewport*/
     overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
     margin: 0;
+}
+
+.nopad {
+    padding: 0;
+}
+
+.bottom_gutter{
+    padding-bottom: 15px;
+}
+
+.top_gutter{
+    padding-top: 15px;
+}
+.title {
+    font-size: 32px;
+    font-weight: bolder;
+    color: #ffffff;
+    background-color: #2e6da4;
+    height: 80px;
+    width : 100%;
+}
+
+.titleHeader{
+    display: inline-block;
+    padding: 0;
+    padding-top: 20px;
+    text-align: center;
+    height: 100%;
+}
+
+.titleImg {
+    padding-top: 10px;
+    margin: auto;
+    display: inline-block;
+    height: 100%;
+    float: left;
+}
+
+.titleImg-right {
+    padding-top: 10px;
+    padding-right: 30px;
+    height: 50%;
+}
+
+.search {
+    text-align: center;
+    align-content: center;
+}
+
+.channel {
+    background-color: black;
+    border: solid 2px #122b40;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.channellogo {
+    padding: 30px;
+}
+
+.channelinfo {
+    font-size: 14px;
+    font-color: #000000;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.channelinfo-header {
+    font-weight: bold;
+    font-style: italic;
+    background-color: #9acfea
+}
+
+.channelinfo-body {
+    font-size: 12px;
+    font-style: italic
+}
+
+.channelinfo-footer {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #8c8c8c;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }

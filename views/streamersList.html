@@ -1,9 +1,21 @@
-<div class="col-xs-12">
-    <div ng-repeat="item in streamerItems" class="list-group-item text-center clearfix">
-        <span style="font-weight: bold; font-size: 12px">{{item.itemName | uppercase}}</span>
-        <!--            <a href="#/addItem/edit/{{item.id}}" class="btn btn-sm btn-default pull-right">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                    </a>
-        -->
+
+<div class="col-xs-12 nopad">
+    <div ng-repeat="item in streamerItems" class="list-group-item text-center clearfix channel">
+        <div class="col-xs-2 channellogo">
+            <img ng-src="{{item.logo}}" width="60px" class="img-circle" />
+        </div>
+        <div class="col-xs-10 channelinfo">
+            <button class="btn btn-block channelinfo-header" data="{{item.name}}" ng-click="openChannel(item.name)">{{item.display_name}}</button>
+            <p class="channelinfo-body">{{item.description}}</p>
+            <p class="channelinfo-body">
+                <br/>
+                <span>Status: {{item.status}}</span>
+                </p>
+            <p class="channelinfo-footer">
+                    <span>Followers: {{item.followers}}</span>
+                    <span style="float: right; padding-right: 10px">Views: {{item.views}}</span>
+                </p>
+        </div>
     </div>
 </div>
+

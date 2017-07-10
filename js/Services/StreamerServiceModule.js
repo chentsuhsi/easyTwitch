@@ -4,19 +4,31 @@
 angular.module('StreamerServiceModule', [])
 
     .service("StreamerService", function(){
+        var client_id = '00uwquit5bkgafh8o54f2s7rljupv8';
+        var accept = 'application/vnd.twitchtv.v5+json';
 
         var streamerService = {};
 
-        streamerService.streamerItems = [
-            {id: 1, completed: true, itemName: 'ESL_SC2', date: '2014-10-00'},
-            {id: 2, completed: true, itemName: 'OgamingSC2', date: '2014-10-01'},
-            {id: 3, completed: true, itemName: 'cretetion', date: '2014-10-02'},
-            {id: 4, completed: true, itemName: 'freecodecamp', date: '2014-10-02'},
-            {id: 5, completed: true, itemName: 'storbeck', date: '2014-10-03'},
-            {id: 6, completed: true, itemName: 'habathcx', date: '2014-10-03'},
-            {id: 7, completed: true, itemName: 'RobotCaleb', date: '2014-10-04'},
-            {id: 8, completed: true, itemName: 'noobs2ninjas', date: '2014-10-04'}
-        ];
+        streamerService.streamerItems = [];
+
+        streamerService.searchItems = function($value){
+          var api = 'https://api.twitch.tv/kraken/search/channels?query=' + encodeURI($value);
+          var obj = [];
+            $.ajaxSetup({
+                headers : {
+                    'Accept' : accept,
+                    'Client-ID' : client_id
+                }
+            });
+            $.getJSON(
+                api,
+                function (data) {
+                    obj = data;
+                    streamerService.streamerItems = obj;
+                }
+            );
+            return obj;
+        };
 
         return streamerService;
     });
